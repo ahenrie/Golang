@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  //"strconv"
+)
 //we will get user input for a number then build a slice from 0 to the input 
 
 //var int inputNumber
@@ -8,19 +11,24 @@ import "fmt"
 //fmt.Scanln(&inputNumber)
 
 func get_number() int {
-  //keep asking for int until int > 0
-  var num_int int
+  //var input string 
+  var num int
+
   for {
     fmt.Println("Enter a number greater than 0:")
-    fmt.Scanln(&num_int)
+    fmt.Scanln(&num)
 
-    if num_int > 0 {
-      break
+    //convet string to an int
+    //num, err := strconv.Atoi(input)
+
+    //check error and value of num greater than 0
+    if num <= 0 {
+      fmt.Println("Invalid input. Try again.")
     } else {
-      fmt.Println("Invlaid input. Enter number greater than 0:")
+      break //exit if input is valid
     }
   }
-  return num_int
+  return num 
 }
 
 func build_slice(size int) []int {
@@ -33,10 +41,11 @@ func build_slice(size int) []int {
 
 func main () {
   //get int
-  num := get_number()
+  sNum := get_number()
   
+  fmt.Println(sNum)
   //build slice
-  resultSlice := build_slice(num)
+  resultSlice := build_slice(sNum)
 
   //print slice test
   fmt.Println(resultSlice)
