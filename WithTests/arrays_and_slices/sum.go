@@ -1,9 +1,9 @@
 package main
 
 func Sum(numbers []int) int {
-	total := 0
+	sum := 0
 	for _, number := range numbers {
-		total += number
+		sum += number
 	}
-	return total
+	return sum
 }
