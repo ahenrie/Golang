@@ -8,7 +8,9 @@ import (
 
 func main() {
 	start := os.Args[1]
+    
 	outputFile := "file_hashes.csv"
+    fmt.Println("Beginning hashing...")
 
 	err := hasher.WalkAndHash(start, outputFile)
 	if err != nil {
