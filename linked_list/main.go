@@ -1,6 +1,8 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 type node struct {
 	data int
@@ -19,6 +21,10 @@ func main() {
 	myList.addNode(4)
 	myList.addNode(5)
 
+	myList.printList()
+
+	fmt.Println("Reverse the list:")
+	myList.reverseList()
 	myList.printList()
 
 }
@@ -44,8 +50,22 @@ func (list *linkedList) addNode(data int) {
 
 func (list *linkedList) printList() {
 	currentNode := list.head
-	for currentNode.next != nil {
+	for currentNode != nil {
 		fmt.Printf("Current Node Address: %p \t Node Data: %d \t Next Node: %p\n", currentNode, currentNode.data, currentNode.next)
 		currentNode = currentNode.next
 	}
+}
+
+func (list *linkedList) reverseList() {
+	// Swap node for previous node usage
+	var prev *node = nil
+	current := list.head
+
+	for current != nil {
+		next := current.next
+		current.next = prev
+		prev = current
+		current = next
+	}
+	list.head = prev
 }
