@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sort"
+)
 
 func majorityElement(nums []int) int {
 	elementCounts := make(map[int]int)
@@ -25,4 +28,5 @@ func majorityElement(nums []int) int {
 func main() {
 	nums := []int{1, 2, 3, 4, 4, 4, 4, 4, 5, 6, 7, 8, 5, 6, 7, 8, 8, 8, 8, 8, 8}
 	fmt.Println(majorityElement(nums))
+	sort.Ints(nums)
 }
