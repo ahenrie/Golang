@@ -27,6 +27,10 @@ func main() {
 	myList.reverseList()
 	myList.printList()
 
+	x := 42
+	p := &x
+	fmt.Println(x, p, *p)
+
 }
 
 func (list *linkedList) addNode(data int) {
