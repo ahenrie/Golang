@@ -52,4 +52,19 @@ func main() {
 	}
 	fmt.Println(countArr)
 
+	//Remove duplicates
+	set := make(map[int]bool)
+
+	for _, num := range countArr {
+		set[num] = true
+	}
+
+	uniqueNums := []int{}
+	for key, _ := range set {
+		uniqueNums = append(uniqueNums, key)
+	}
+
+	sort.Ints(uniqueNums)
+	fmt.Println(uniqueNums)
+
 }
