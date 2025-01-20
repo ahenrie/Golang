@@ -1,17 +1,14 @@
 package main
 
 import (
-  "fmt"
-  //"strconv"
+	"fmt"
+	//"strconv"
 )
-//we will get user input for a number then build a slice from 0 to the input 
 
-//var int inputNumber
-//fmt.Println("Enter a number for array size:")
-//fmt.Scanln(&inputNumber)
+//we will get user input for a number then build a slice from 0 to the input
 
 func get_number() int {
-  //var input string 
+  //var input string
   var num int
 
   for {
@@ -28,7 +25,7 @@ func get_number() int {
       break //exit if input is valid
     }
   }
-  return num 
+  return num
 }
 
 func build_slice(size int) []int {
@@ -42,7 +39,7 @@ func build_slice(size int) []int {
 func main () {
   //get int
   sNum := get_number()
-  
+
   fmt.Println(sNum)
   //build slice
   resultSlice := build_slice(sNum)
