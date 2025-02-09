@@ -1,11 +1,11 @@
-package main
+package pointerpkg
 
 import (
 	"fmt"
 	"time"
 )
 
-func main() {
+func createPointers {
 	// variable declaration with var
 	var count1 *int
 	// variable with new()
