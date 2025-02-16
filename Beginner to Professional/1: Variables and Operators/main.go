@@ -17,7 +17,7 @@ func main() {
 	pointers.Deref(pointer1)
 	pointers.Deref(pointer2)
 
-	myList, err := pointers.BuildList(100)
+	myList, err := pointers.BuildList(10)
 
 	if err == nil {
 		myList.PrintList()
@@ -25,4 +25,9 @@ func main() {
 		fmt.Println(err)
 	}
 
+	// Adding to a pointer with a function
+	pointers.Add(100, pointer1)
+
+	a, b := 5, 10
+	pointers.Swap(&a, &b)
 }
